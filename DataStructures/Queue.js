@@ -1,3 +1,8 @@
+/**
+ * First In, First Out - FIFO
+ * Like a customer line, first one entered, will be helped first.
+ */
+
 class Queue {
     constructor() {
         this.head = null
@@ -9,7 +14,7 @@ class Queue {
         let newNode = new Node(data);
         let current = this.head;
         if (!current) {
-            current = newNode;
+            this.head = newNode;
         }
         else {
             while (current.next) current = current.next
@@ -18,6 +23,7 @@ class Queue {
         this.size++;
     }
 
+    /*
     dequeue() {
         let curr = this.head;
         let prev = undefined;
@@ -38,6 +44,39 @@ class Queue {
 
         return returnNode;
     }
+    */
+
+    dequeue() {
+        let firstElem = this.head;
+        let returnNode = null;
+        if (!firstElem) return ("Empty Queue");
+        else if (firstElem.next) {
+            returnNode = firstElem;
+            firstElem = firstElem.next
+            this.head = firstElem;
+        }
+        else {
+            returnNode = firstElem;
+            this.head = null
+        }
+        this.size--;
+        return returnNode;
+    }
+
+    display() {
+        console.log("=====");
+        
+        let curr = this.head;
+        if (!curr) return console.log("Empty queue");
+        
+
+        //Display parent and all children nodes
+        console.log(curr.data);
+        while (curr.next) {
+            curr = curr.next;
+            console.log(curr.data);   
+        }
+    }
 
 
 }
@@ -50,9 +89,19 @@ class Node {
 }
 
 let myQueue = new Queue()
-myQueue.enqueue(5);
-myQueue.enqueue(4);
-myQueue.enqueue(3);
-myQueue.enqueue(2);
 myQueue.enqueue(1);
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+myQueue.enqueue(4);
+myQueue.enqueue(5);
+myQueue.display();
 myQueue.dequeue();
+myQueue.display();
+myQueue.dequeue();
+myQueue.display();
+myQueue.dequeue();
+myQueue.display();
+myQueue.dequeue();
+myQueue.display();
+myQueue.dequeue();
+myQueue.display();
