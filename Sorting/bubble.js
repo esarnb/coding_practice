@@ -1,10 +1,3 @@
-/**
- * (Math.random() * 10)       = 0 to 9
- * ((Math.random() * 10) + 1) = 1 to 10
- * (Math.random() * 100)      = 0 to 99
- * (Math.random() * 101)      = 0 to 100
- */
-
 let list = [];
 
 for (let i = 0; i < 10; i++) {
@@ -14,7 +7,7 @@ for (let i = 0; i < 10; i++) {
 console.log(list);
 
 /**
- * Bubble Sort
+ * Bubble Sort (Runtime: O(n^2) by for and while)
  *      Switch 2 elements if first is higher than second, 
  *      throughout the list until it is fully sorted.
  */

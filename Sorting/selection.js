@@ -7,7 +7,7 @@ for (let i = 0; i < 10; i++) {
 console.log(list);
 
 /**
- * Selection Sort
+ * Selection Sort (Runtime O(n^2) by for and while)
  *      Take lowest element from the entire list, 
  *      put it into the front, repeat until list is fully sorted.
 */
