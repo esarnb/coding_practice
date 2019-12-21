@@ -27,15 +27,14 @@ class Stack {
     pop() {
 
         // Set parent node to current and to return.
-        let current = this.head;
-        let returnNode = current;
+        let returnNode = this.head;
         
-        if (!current) return console.log("Empty Stack");
-        else if (current.next) {
-            current = current.next; //Set parent to next
+        if (!this.head) return console.log("Empty Stack");
+        else if (this.head.next) {
+            this.head = this.head.next; //Set parent to next
         }
         else {
-            current = null;
+            this.head = null;
         }
 
         this.size--;
@@ -44,7 +43,8 @@ class Stack {
     }
 
     peek() {
-        //
+        if (!this.head) return "Empty Stack"
+        else return this.head.data
     }
 
     display() {
@@ -63,9 +63,23 @@ class Node {
 let myStack = new Stack();
 
 myStack.push(1);
+console.log("Peek: ",myStack.peek())
 myStack.push(2);
+console.log("Peek: ",myStack.peek())
 myStack.push(3);
+console.log("Peek: ",myStack.peek())
 myStack.push(4);
+console.log("Peek: ",myStack.peek())
 myStack.push(5);
+console.log("Peek: ",myStack.peek())
 myStack.pop();
-
+console.log("Peek: ",myStack.peek())
+myStack.pop();
+console.log("Peek: ",myStack.peek())
+myStack.pop();
+console.log("Peek: ",myStack.peek())
+myStack.pop();
+console.log("Peek: ",myStack.peek())
+myStack.pop();
+console.log("Peek: ",myStack.peek())
+myStack.pop();
