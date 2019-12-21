@@ -23,42 +23,26 @@ class Queue {
         this.size++;
     }
 
-    /*
-    dequeue() {
-        let curr = this.head;
-        let prev = undefined;
-
-        if (!curr) return false;
-
-        // If there is a node in queue, iterate to the end
-        while (curr.next) {
-            prev = curr;
-            curr = curr.next;
-        }
-
-        let returnNode = curr; //Save last node
-        if (!prev) this.head = null; // If node is parent, set parent to null
-        else prev.next = null; // Set current end node to null
-
-        this.size--;
-
-        return returnNode;
-    }
-    */
-
+    //Remove next element in Queue (always first node)
     dequeue() {
         let firstElem = this.head;
         let returnNode = null;
+
         if (!firstElem) return ("Empty Queue");
+
+        // If parent has child, set child as new parent
         else if (firstElem.next) {
             returnNode = firstElem;
             firstElem = firstElem.next
             this.head = firstElem;
         }
+
+        // Set parent to null, emptying the queue.
         else {
             returnNode = firstElem;
             this.head = null
         }
+        
         this.size--;
         return returnNode;
     }
