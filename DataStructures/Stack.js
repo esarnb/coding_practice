@@ -48,9 +48,18 @@ class Stack {
     }
 
     display() {
-        //
+        console.log("=====");
+        
+        if (!this.head) return "Empty Stack"
+        else {
+            let curr = this.head
+            console.log(curr.data);
+            while (curr.next) {
+                curr = curr.next;
+                console.log(curr.data);
+            }
+        }
     }
-
 }
 
 class Node {
@@ -71,15 +80,28 @@ console.log("Peek: ",myStack.peek())
 myStack.push(4);
 console.log("Peek: ",myStack.peek())
 myStack.push(5);
+myStack.display()
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
+
+myStack.display()
 console.log("Peek: ",myStack.peek())
 myStack.pop();
