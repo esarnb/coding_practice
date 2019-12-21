@@ -42,7 +42,7 @@ class Queue {
             returnNode = firstElem;
             this.head = null
         }
-        
+
         this.size--;
         return returnNode;
     }
@@ -62,6 +62,10 @@ class Queue {
         }
     }
 
+    peek() {
+        if (this.head) return this.head.data;
+        else return "Empty Queue"
+    }
 
 }
 
@@ -74,18 +78,26 @@ class Node {
 
 let myQueue = new Queue()
 myQueue.enqueue(1);
+console.log("Peek: ", myQueue.peek())
 myQueue.enqueue(2);
+console.log("Peek: ", myQueue.peek())
 myQueue.enqueue(3);
 myQueue.enqueue(4);
 myQueue.enqueue(5);
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
 myQueue.dequeue();
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
 myQueue.dequeue();
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
 myQueue.dequeue();
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
 myQueue.dequeue();
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
 myQueue.dequeue();
 myQueue.display();
+console.log("Peek: ", myQueue.peek())
