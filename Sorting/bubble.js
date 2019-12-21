@@ -5,7 +5,7 @@
  * (Math.random() * 101)      = 0 to 100
  */
 
- let list = [];
+let list = [];
 
 for (let i = 0; i < 10; i++) {
     list.push( parseInt((Math.random() * 100) + 1) )
@@ -13,8 +13,12 @@ for (let i = 0; i < 10; i++) {
 
 console.log(list);
 
+/**
+ * Bubble Sort
+ *      Switch 2 elements if first is higher than second, 
+ *      throughout the list until it is fully sorted.
+ */
 
-// bubble Sort
 let fullySorted = false;
 while (!fullySorted) {
 
