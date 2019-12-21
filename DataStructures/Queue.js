@@ -30,12 +30,16 @@ class Queue {
             curr = curr.next;
         }
 
-        if (!prev) this.head = null;
-        else if (curr.next) prev.next = curr.next
-        else prev.next = null;
+        let returnNode = curr; //Save last node
+        if (!prev) this.head = null; // If node is parent, set parent to null
+        else prev.next = null; // Set current end node to null
 
         this.size--;
+
+        return returnNode;
     }
+
+
 }
 
 class Node {
