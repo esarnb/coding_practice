@@ -1,8 +1,31 @@
+/**
+ * Stack - LIFO - Last in First Out
+ * Like record players (or like redo/undo)
+ */
+
+
 class Stack {
     constructor() {
         this.head = null;
         this.size = 0;
     }
+
+    push() {
+
+    }
+
+    pop() {
+
+    }
+
+    peek() {
+
+    }
+
+    display() {
+        
+    }
+
 }
 
 class Node {
