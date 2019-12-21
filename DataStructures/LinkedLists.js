@@ -32,22 +32,32 @@ class LinkedList {
         console.log("=====");
         let list = this.head;
         if (list) {
-            console.log(list.data);
+            console.log(list.data); //Display parent node
             while (list.next) {
                 list = list.next;
-                console.log(list.data);
+                console.log(list.data); //Display all children
             }            
         }
         else console.log("No Data");
     }
 
+    /**
+     * Removes the first matching data element
+     * 
+     * @param {Any} data The element inputted by user to remove from the list.
+     */
     removeNode(data) {
         let curr = this.head;
         let prev = undefined;
         let count = 0, foundNode = false;
+
+        // Iterate through entire LL and stop when finding first same node
         while (count < this.size && !foundNode) {
+            //If the node is  a match
             if (curr.data === data) {
+                // If the node is a parent element
                 if (count == 0) {
+                    // If parent has child, set child as parent, else null.
                     if (curr.next) {
                         this.head = curr.next
                     }
@@ -55,11 +65,14 @@ class LinkedList {
                         this.head = null
                     }
                 }
+                // If the node is inbetween 2 nodes, skip current by connecting parent's and child's reference.
                 else {
                     prev.next = curr.next
                 }
                 foundNode = true
             }
+
+            // Did not find matching node, continue to the next one.
             else {
                 prev = curr;
                 curr = curr.next;
