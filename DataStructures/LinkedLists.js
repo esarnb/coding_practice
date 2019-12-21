@@ -27,6 +27,18 @@ class LinkedList {
             this.size++; 
         }
     }
+
+    display() {
+        let list = this.head;
+        if (list) {
+            console.log(list.data);
+            while (list.next) {
+                list = list.next;
+                console.log(list.data);
+            }            
+        }
+        else console.log("No Data");
+    }
 }
 
 let mylist = new LinkedList()
@@ -35,4 +47,4 @@ mylist.addNode(2);
 mylist.addNode(3);
 mylist.addNode(4);
 mylist.addNode(5);
-
+mylist.display()
