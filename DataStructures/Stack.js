@@ -20,10 +20,27 @@ class Stack {
             newNode.next = this.head
             this.head = newNode;
         }
+
+        this.size++;
     }
 
     pop() {
-        //
+
+        // Set parent node to current and to return.
+        let current = this.head;
+        let returnNode = current;
+        
+        if (!current) return console.log("Empty Stack");
+        else if (current.next) {
+            current = current.next; //Set parent to next
+        }
+        else {
+            current = null;
+        }
+
+        this.size--;
+
+        return returnNode;
     }
 
     peek() {
@@ -50,4 +67,5 @@ myStack.push(2);
 myStack.push(3);
 myStack.push(4);
 myStack.push(5);
+myStack.pop();
 
