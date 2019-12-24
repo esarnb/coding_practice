@@ -16,155 +16,10 @@ for (let i = 0; i < 10; i++) {
 
 list = [5, 3, 4, 8]
 console.log(list);
-//
 
 
-/**
- * Merge sort splits the list in halves until there is 2 to sort.
- * Once that is sorted, it is put back together, and those are sorted.
- * Recursively breaking it apart and stitching it together.
- */
 
-
-
-/**
- *  My Method
- */
-function driver(list) {
-    let helper = [];
-
-    sorting(list, helper);
-}
-
-function sorting(list, helper) {
-    if (list.length ) {
-        let mid = Math.floor(high / 2)
-        sorting(list, helper, low, mid)
-        sorting(list, helper, low, mid + 1)
-        merge(list, helper, low, mid + 1,high)
-    }
-}
-
-function merge(list, helper, low, mid, high) {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /**
- * Merge sort splits the list in halves until there is 2 to sort.
- * Once that is sorted, it is put back together, and those are sorted.
- * Recursively breaking it apart and stitching it together.
- */
-
-
- /*
-
-// function driver(list) {
-//     let helper = [];
-
-//     sorting(list, helper, 0, list.length);
-// }
-
-// function sorting(list, helper, low, high) {
-//     if (high > low) {
-//         let mid = Math.floor(high / 2)
-//         sorting(list, helper, low, mid)
-//         sorting(list, helper, low, mid + 1)
-//         merge(list, helper, low, mid + 1,high)
-//     }
-// }
-
-// function merge(list, helper, low, mid, high) {
-    
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // We will have a split for the left half, and the right half.
- // So we need midpoint values to split them. Once its split, we
- // merge them by picking which one is lower/higher and assign it.
- // A helper array will be used, to assign sorted variables back.
-let helper = []
-let mid = -1
-function sorting(list, helper, low, high) {
-    //Once high index is <= low index, we stop that recursive thread.
-    if (high < low) {
-        // Example: high(5) // 2 = mid(2). low = 0, high = 2
-        //          high(2) // 2 = mid(1). low = 0, high = 1
-        //          high(1) // 2 = mid(9). low = 0, high = 0. This is skipped & ended.
-        // We do this for the left and right side. Then we merge.
-        
-        mid = Math.floor(high / 2) // High is the end of the subset length, pivot.
-        sorting(list, helper, low, mid) // Left of pivot
-        sorting(list, helper, mid+1, list.length) // Right  of pivot
-
-        //Then we merge and check which data on the index is < and choose that.
-        merging(list, helper, low, mid, high);
-
-    }
-}
-
-function merging(list, helper, low, mid, high) {
-    if (list[low] < list[mid+1]) helper[low] = list[low]
-    else helper[low] = list[mid+1]
-}
-
-console.log(helper);
-*/
-
-
-
-
-
-
-
-
-
-
-
+//Merge Sorting
 
 
 
@@ -188,8 +43,6 @@ console.log(helper);
 
 
 /*
-
-    
 function driver(list) {
     let helper = [];
     sorting(list, helper, 0, list.length - 1)
@@ -248,8 +101,4 @@ function merge(list, helper, lower, middle, higher) {
 }
 
 driver(list)
-
 */
-
-
-
