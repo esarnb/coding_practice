@@ -26,6 +26,103 @@ console.log(list);
  */
 
 
+
+/**
+ *  My Method
+ */
+function driver(list) {
+    let helper = [];
+
+    sorting(list, helper);
+}
+
+function sorting(list, helper) {
+    if (list.length ) {
+        let mid = Math.floor(high / 2)
+        sorting(list, helper, low, mid)
+        sorting(list, helper, low, mid + 1)
+        merge(list, helper, low, mid + 1,high)
+    }
+}
+
+function merge(list, helper, low, mid, high) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /**
+ * Merge sort splits the list in halves until there is 2 to sort.
+ * Once that is sorted, it is put back together, and those are sorted.
+ * Recursively breaking it apart and stitching it together.
+ */
+
+
+ /*
+
+// function driver(list) {
+//     let helper = [];
+
+//     sorting(list, helper, 0, list.length);
+// }
+
+// function sorting(list, helper, low, high) {
+//     if (high > low) {
+//         let mid = Math.floor(high / 2)
+//         sorting(list, helper, low, mid)
+//         sorting(list, helper, low, mid + 1)
+//         merge(list, helper, low, mid + 1,high)
+//     }
+// }
+
+// function merge(list, helper, low, mid, high) {
+    
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  // We will have a split for the left half, and the right half.
  // So we need midpoint values to split them. Once its split, we
  // merge them by picking which one is lower/higher and assign it.
@@ -56,7 +153,7 @@ function merging(list, helper, low, mid, high) {
 }
 
 console.log(helper);
-
+*/
 
 
 
