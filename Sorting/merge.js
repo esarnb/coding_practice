@@ -55,7 +55,6 @@ function merging(list, helper, low, mid, high) {
         helper[i] = list[i];
     }
 
-
     // Now create two pointers to iterate though both lists, and current to overwrite values.
     let pLeft = low;
     let pRight = mid+1;
@@ -79,8 +78,15 @@ function merging(list, helper, low, mid, high) {
 
     // Still do not understand this
     
-    let remaining = mid-pLeft;
+    let remaining = mid-pLeft; // Left subset that was not checked
     for (let i = 0; i <= remaining; i++) {
+        // Copy over unchecked elements from helper to the end of main list
+        
+        /* Self note
+        
+            Are these the leftover highest elements, which is why they are put to the end of the list? 
+        
+        */
         list[current + i] = helper[pLeft + i];
     }
 }
@@ -99,5 +105,8 @@ function driver(list) {
 driver(list);
 console.log(list);
 
-/* Do we need a callback to make sure it runs after sorting is complete? Where do we place cb? */
+/* Self note
 
+    Do we need a callback to make sure it runs after sorting is complete? Where do we place cb?
+
+*/
