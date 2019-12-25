@@ -12,7 +12,6 @@ for (let i = 0; i < 10; i++) {
     list.push( parseInt((Math.random() * 100) + 1) )
 }
 
-list = [5, 3, 4, 8, 2, 6] //Temporary test placement
 console.log(list);
 
 // We will make a recursive function that will divide the list in halves until it cannot (higher <= lower)
