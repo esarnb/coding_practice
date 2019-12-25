@@ -43,6 +43,20 @@ class BST {
             curr = newNode;
         }
     }
+
+    display() {
+        if (this.parent) {
+            let curr = this.parent;
+            console.log(curr.data);
+            while (curr.left || curr.right) {
+                if (curr.left) curr = curr.left;
+                else curr = curr.right;
+                console.log(curr.data);
+            }
+            
+        }
+        else console.log("No data");
+    }
 }
 
 
