@@ -14,30 +14,34 @@ class BST {
     addNode(data) {
         // Initialize element into a node
         let newNode = new Node(data);
+        let curr = this.parent; // Main parent node
+        let prev = curr; // Previous parent picked
 
         // If BST empty, this is this highest parent node
-        if (!this.parent) this.parent = node;
+        if (!curr) this.parent = node;
         else {
-            // Iterate through the BST - lowest element route
-            let curr = this.parent;
+            // While there is a node at the left/right (lower/higher) position
+            while (curr) {
 
-            // choose child on left/right position, else pick left
-            // let choose = (curr.left || curr.right) || curr.left ;
-            let choose = 1;
-
-            // While the parent has child on either position
-            while (choose) {
+                prev = curr; // Record parent node before iterating into a child
             
                 // If the newNode is < parent, choose left
-
+                if (newNode.data < curr.data) {
+                    curr = curr.left
+                }
                 // else choose right
+                else if (newNode.data > curr.data) {
+                    curr = curr.right
+                }
+                // else: if both are ==, void it
 
                 // repeat above until there is a spot to insert the node
             }
 
-            // Insert the new node into the free position
+            // Set parent as current's parent node and Insert the new node into the current free position
+            newNode.parent = prev;
+            curr = newNode;
         }
-
     }
 }
 
