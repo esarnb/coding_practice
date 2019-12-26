@@ -19,29 +19,42 @@ class BST {
         if (!curr) this.parent = newNode;
         else {
             while (curr.right) curr = curr.right;
+            newNode.parent = curr;
             if (!curr.left) curr.left = newNode;
             else curr.right = newNode;
-            newNode.parent = curr;
             return newNode;
         }
     }
 
     // Display BST left to right
     display() {
-
-        if (this.parent) {
-
-            let curr = this.parent;
-            console.log(curr.data);
-
-            while (curr.left || curr.right) {
-                if (curr.left) curr = curr.left;
-                else curr = curr.right;
-                console.log(curr.data);
+        function _iterate(node) {
+            if (node) {
+                console.log(node.data);
+                if (node.right) {
+                    _iterate(node.left)
+                    _iterate(node.right)
+                }
+                else if (node.left) {
+                    _iterate(node.left)
+                }
             }
-            
         }
 
+        // if (this.parent) {
+
+        //     let curr = this.parent;
+        //     console.log(`Parent: ${ curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
+
+        //     while (curr.left || curr.right) {
+        //         if (curr.left) curr = curr.left;
+        //         else curr = curr.right;
+        //         console.log(`Parent: ${curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
+        //     }
+        //     //console.log(`Parent: ${curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
+            
+        // }
+        if (this.parent) _iterate(this.parent)
         else console.log("No data");
     }
 
