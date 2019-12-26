@@ -15,22 +15,37 @@ class BST {
         // Initialize element into a node
         let newNode = new Node(data);
         let curr = this.parent; // Main parent node
-
+        let inserted = false;
+        // If the BST list is empty, make this the first node.
         if (!curr) this.parent = newNode;
+
         else {
-            while (curr.right) curr = curr.right;
-            newNode.parent = curr;
-            if (!curr.left) curr.left = newNode;
-            else curr.right = newNode;
-            return newNode;
+            while (!inserted) {
+                newNode.parent = curr;
+                if (newNode.data < curr.data) {
+                    if (curr.left) curr = curr.left;
+                    else {
+                        curr.left = newNode
+                        inserted = true;
+                    }
+                }
+                else if (newNode.data > curr.data) {
+                    if (curr.right) curr = curr.right;
+                    else {
+                        curr.right = newNode
+                        inserted = true;
+                    }
+                }
+            }
         }
+        return newNode;
     }
 
     // Display BST left to right
     display() {
         function _iterate(node) {
             if (node) {
-                console.log(node.data);
+                console.log(`P: ${node.parent ? node.parent.data : "None"} C: ${node.data}`);
                 if (node.right) {
                     _iterate(node.left)
                     _iterate(node.right)
@@ -40,20 +55,7 @@ class BST {
                 }
             }
         }
-
-        // if (this.parent) {
-
-        //     let curr = this.parent;
-        //     console.log(`Parent: ${ curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
-
-        //     while (curr.left || curr.right) {
-        //         if (curr.left) curr = curr.left;
-        //         else curr = curr.right;
-        //         console.log(`Parent: ${curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
-        //     }
-        //     //console.log(`Parent: ${curr.parent ? curr.parent.data : "Null"} Current: ${curr.data}`);
-            
-        // }
+        
         if (this.parent) _iterate(this.parent)
         else console.log("No data");
     }
