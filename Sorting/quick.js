@@ -31,7 +31,7 @@ function quickSort(arr, left, right) {
 //
 function partition(arr, left, right) {
     // Pick center pivot point of list
-    let pivot = arr[(left+right)/2]; 
+    let pivot = arr[Math.floor((left+right)/2)]; 
 
     // While there are still elements to check
     while (left <= right) {
