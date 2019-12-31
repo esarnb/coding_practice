@@ -48,14 +48,16 @@ function partition(arr, left, right) {
             left++;
             right--;
         }
-        return left;
     }
+    return left;
 }
 
 function swap(arr, a, b) {
     let buffer = arr[a];
     arr[a] = arr[b];
     arr[b] = buffer;
+    // console.log(arr);
+    
 }
 
 quickSort(list, 0, list.length-1);
