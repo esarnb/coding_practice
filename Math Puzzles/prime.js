@@ -1,0 +1,1 @@
+// Figure out prime num out of a range or given list
